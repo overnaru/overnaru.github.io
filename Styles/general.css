@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+}
+
+/* NAVBAR STYLE*/
+
+#menu {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  height: 15%;
+  z-index: 99;
+}
+
+#menu ul li:nth-child(-n+5) {
+    margin-right: 2em;
+}
+
+#menu ul li:nth-child(n+4) {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.onTop ul {
+  padding-right: 6em;
+  color: #ffe472;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  font-size: 1.2em;
+  padding: 0;
+  padding: 1%;
+  margin-right: 13%;
+  transition: 1.2s;
+}
+
+.onTop a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* INDEX STYLE*/
+
+#index {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.indexBackground {
+	position: absolute;
+  background-image: url(../Media/Backgrounds/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -99;
+}
+
+.textContainer {
+  position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 25vh;
+    justify-content: center;
+}
+
+.textContent {
+    color: rgba(255, 255, 255, 0.60);
+    text-align: center;
+}
+
+.textContent h1{
+    font-size: 6em;
+    margin-bottom: 0.2em;
+}
+
