@@ -54,9 +54,10 @@ body {
 
 .indexBackground {
 	position: absolute;
-  background-image: url(../Media/Backgrounds/background.jpg);
+  background-image: url(../Media/Backgrounds/initialBackground.gif);
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: .5;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -64,22 +65,40 @@ body {
 	z-index: -99;
 }
 
+.backgroundFilter {
+  position: absolute;
+  background-image: url(../Media/Backgrounds/filter.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -98;
+}
 
 .textContainer {
-  color: #f0f0f0;
-  position: absolute;
-  display: flex;
-  width: 100%;
-  bottom: 25vh;
-  justify-content: center;
+    color: #f0f0f0;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    top: 45vh;
+    justify-content: center;
 }
 
 #messenger {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3em;
-  white-space: nowrap;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    white-space: nowrap;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+}
+
+.half {
+  width: 40vw;
+    position: absolute;
+    left: 0;
+    height: inherit;
+    background-color: #3d3d3d;
 }
