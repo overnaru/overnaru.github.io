@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One");
+@import url("https://fonts.googleapis.com/css?family=Raleway:100i,400,700");
+.c-slide__logo-contact-me, .c-slide__logo-title, .c-slide__logo-contacts, .c-portlet {
+  transition: all .5s ease;
+}
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -6,7 +11,6 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Ubuntu");
 html {
   line-height: 1.15;
   /* 1 */
@@ -333,11 +337,11 @@ template {
 }
 
 * {
-  font-family: "Ubuntu";
+  font-family: "Raleway";
 }
 
 .o-main-region {
-  padding: 0 15px;
+  margin: 0 auto;
 }
 
 @media (min-width: 992px) {
@@ -349,7 +353,7 @@ template {
 .c-slide {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: calc(100vw - 50px);
   overflow: hidden;
 }
 
@@ -382,7 +386,6 @@ template {
   width: 50px;
   height: 100%;
   background-color: #c2374e;
-  transition: ease width .5s;
   overflow: hidden;
 }
 
@@ -403,7 +406,6 @@ template {
   top: calc(50% + 25px);
   transform: translateY(-50%) rotate(-90deg);
   letter-spacing: 2px;
-  transition: .33s linear all;
 }
 
 .c-slide__logo-title::before, .c-slide__logo-title::after {
@@ -429,28 +431,67 @@ template {
   top: 50%;
 }
 
+.c-slide__logo-contacts {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.c-slide__logo:hover .c-slide__logo-contacts {
+  min-width: 750px;
+  opacity: 1;
+}
+
 .c-slide__logo-contacts-element {
+  min-width: 750px;
   margin-left: 250px;
   color: white;
-  font-size: 1.85rem;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-style: italic;
 }
 
 .c-portlet {
   height: 400px;
-  width: 75%;
-  display: inline-block;
+  width: 85%;
+  margin: 80px auto;
+  display: block;
   background-color: #211a2b;
-  border: 15px solid transparent;
-  -moz-border-image: -moz-linear-gradient(top, #de2d4e 0%, #ffc647 90%, transparent 90.01%);
-  -webkit-border-image: -webkit-linear-gradient(top, #de2d4e 0%, #ffc647 90%, transparent 90.01%);
-  border-image: linear-gradient(to right, #de2d4e 0%, #ffc647 90%, white 90.01%);
+  border: 15px solid #140d1f;
+  border-image: linear-gradient(to right, #de2d4e 0%, #ffc647 90%, #140d1f 90.01%);
   border-image-slice: 1;
   color: white;
   padding: 0px;
+  filter: grayscale(1);
+}
+
+.c-portlet:nth-child(odd) {
+  border-image: linear-gradient(to left, #de2d4e 0%, #ffc647 90%, #140d1f 90.01%);
+  border-image-slice: 1;
+}
+
+.c-portlet:first-child {
+  margin-top: 160px;
+}
+
+.c-portlet:last-child {
+  margin-bottom: 160px;
+}
+
+.c-portlet:hover {
+  width: 100%;
+  filter: grayscale(0);
+}
+
+.c-portlet__image-wrap, .c-portlet__text-wrap {
+  height: 100%;
+  vertical-align: top;
+  float: left;
 }
 
 .c-portlet__image-wrap {
+  width: 50%;
   position: relative;
   overflow: hidden;
 }
@@ -465,19 +506,17 @@ template {
   object-position: center;
 }
 
-.c-portlet__image-wrap, .c-portlet__text-wrap {
-  display: inline-block;
-  width: calc(50% - 10px);
-  height: 100%;
-  vertical-align: top;
+.c-portlet__text-wrap {
+  width: calc(50% - 30px);
+  padding: 15px;
 }
 
 .c-hexagono {
-  height: 10vw;
+  height: 500px;
   overflow: hidden;
   transform: rotate(90deg);
   visibility: hidden;
-  width: 15vw;
+  width: 700px;
 }
 
 .c-hexagono__cut {
@@ -488,9 +527,37 @@ template {
 }
 
 .c-hexagono__content {
+  position: relative;
   height: 100%;
   transform: rotate(-60deg);
   visibility: visible;
   width: 100%;
-  background-color: #ff0076;
+  overflow: hidden;
+}
+
+.c-hexagono__content > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 125%;
+  height: 125%;
+  object-fit: cover;
+  object-position: center;
+  transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.c-helmet {
+  height: 3000px;
+  width: 100vw;
+  background-color: hotpink;
+}
+
+.u-bold {
+  font-size: 1.85rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.u-bg-normal {
+  background-color: #140d1f;
 }
