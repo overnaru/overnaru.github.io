@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One");
 @import url("https://fonts.googleapis.com/css?family=Raleway:100i,400,700");
+@import url("https://fonts.googleapis.com/css?family=Merienda:700");
 .c-slide__logo-contact-me, .c-slide__logo-title, .c-slide__logo-contacts, .c-portlet {
   transition: all .5s ease;
 }
@@ -453,12 +454,14 @@ template {
 }
 
 .c-portlet {
-  height: 400px;
+  box-sizing: border-box;
+  position: relative;
+  height: 550px;
   width: 85%;
   margin: 80px auto;
   display: block;
   background-color: #211a2b;
-  border: 15px solid #140d1f;
+  border: 0 solid #140d1f;
   border-image: linear-gradient(to right, #de2d4e 0%, #ffc647 90%, #140d1f 90.01%);
   border-image-slice: 1;
   color: white;
@@ -481,19 +484,12 @@ template {
 
 .c-portlet:hover {
   width: 100%;
+  border-width: 15px;
   filter: grayscale(0);
 }
 
 .c-portlet__image-wrap, .c-portlet__text-wrap {
   height: 100%;
-  vertical-align: top;
-  float: left;
-}
-
-.c-portlet__image-wrap {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
 }
 
 .c-portlet__image {
@@ -502,21 +498,67 @@ template {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   object-fit: cover;
   object-position: center;
 }
 
 .c-portlet__text-wrap {
-  width: calc(50% - 30px);
-  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 50px;
+}
+
+.c-portlet__text-title {
+  text-shadow: 2px 5px rgba(0, 0, 0, 0.25);
+  font-size: 8rem;
+  margin: 0;
+}
+
+.c-portlet__text {
+  margin: 0;
+  font-size: 3rem;
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.c-portlet__text-title, .c-portlet__text {
+  color: white;
+}
+
+.c-about-me {
+  height: 400px;
+  width: 85%;
+  margin: 80px auto;
+  display: block;
+  background-color: #211a2b;
+  color: white;
+}
+
+.c-about-me__image {
+  width: 50%;
+  float: left;
+  position: relative;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c-about-me__text {
+  width: 50%;
+  float: left;
+}
+
+.c-about-me__title {
+  font-family: 'Merienda';
 }
 
 .c-hexagono {
-  height: 500px;
+  height: 200px;
   overflow: hidden;
   transform: rotate(90deg);
   visibility: hidden;
-  width: 700px;
+  width: 350px;
 }
 
 .c-hexagono__cut {
@@ -547,9 +589,29 @@ template {
 }
 
 .c-helmet {
-  height: 3000px;
-  width: 100vw;
+  display: none;
+  height: 10000px;
+  width: 100%;
   background-color: hotpink;
+  position: relative;
+}
+
+.c-helmet__main-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.c-helmet__image-wrap, .c-helmet__text-wrap {
+  width: 50%;
+  display: inline-block;
+}
+
+.c-helmet--active .c-helmet__main-wrap {
+  position: fixed;
 }
 
 .u-bold {
