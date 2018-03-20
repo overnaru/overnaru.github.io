@@ -531,22 +531,19 @@ template {
   height: 400px;
   width: 85%;
   margin: 80px auto;
-  display: block;
-  background-color: #211a2b;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .c-about-me__image {
-  width: 50%;
-  float: left;
+  width: 30%;
   position: relative;
-  object-fit: cover;
-  object-position: center;
 }
 
 .c-about-me__text {
   width: 50%;
-  float: left;
 }
 
 .c-about-me__title {
@@ -581,11 +578,11 @@ template {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 125%;
-  height: 125%;
+  width: 140%;
+  height: 140%;
   object-fit: cover;
   object-position: center;
-  transform: translate(-50%, -50%) rotate(30deg);
+  transform: translate(-58%, -48%) rotate(30deg);
 }
 
 .c-helmet {
