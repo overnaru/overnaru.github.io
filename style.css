@@ -341,8 +341,13 @@ template {
   font-family: "Raleway";
 }
 
+a {
+  color: white;
+}
+
 .o-main-region {
   margin: 0 auto;
+  overflow: auto;
 }
 
 @media (min-width: 992px) {
@@ -363,6 +368,7 @@ template {
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  object-fit: cover;
 }
 
 .c-slide__logo {
@@ -453,6 +459,15 @@ template {
   font-style: italic;
 }
 
+.c-slide__logo-contacts-icon {
+  max-width: 600px;
+  padding-left: 170px;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+
 .c-portlet {
   box-sizing: border-box;
   position: relative;
@@ -530,32 +545,57 @@ template {
 .c-about-me {
   height: 400px;
   width: 85%;
-  margin: 80px auto;
+  margin: 85px auto 185px;
   color: white;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-}
-
-.c-about-me__image {
-  width: 30%;
-  position: relative;
+  justify-content: start;
 }
 
 .c-about-me__text {
-  width: 50%;
+  width: 100%;
+  text-align: center;
 }
 
 .c-about-me__title {
   font-family: 'Merienda';
+  font-size: 2rem;
+  padding-top: 25px;
+}
+
+.c-about-me__image {
+  width: 100%;
+}
+
+.c-about-me__subtitle-part {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.c-about-me__subtitle-part:not(:first-child) {
+  padding-left: 35px;
+}
+
+.c-about-me__subtitle-part:not(:first-child)::before {
+  content: '';
+  background-color: white;
+  position: absolute;
+  left: 17.5px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
 }
 
 .c-hexagono {
-  height: 200px;
+  height: 350px;
   overflow: hidden;
   transform: rotate(90deg);
   visibility: hidden;
-  width: 350px;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .c-hexagono__cut {
@@ -585,30 +625,60 @@ template {
   transform: translate(-58%, -48%) rotate(30deg);
 }
 
-.c-helmet {
-  display: none;
-  height: 10000px;
+.c-knowledge {
+  height: 550px;
   width: 100%;
-  background-color: hotpink;
+  background-color: #140d1f;
   position: relative;
-}
-
-.c-helmet__main-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 500px;
   overflow: hidden;
 }
 
-.c-helmet__image-wrap, .c-helmet__text-wrap {
-  width: 50%;
-  display: inline-block;
+.c-knowledge__text-wrap {
+  vertical-align: top;
+  text-align: center;
+  position: relative;
+  color: white;
+  background-color: #3d3d3d;
 }
 
-.c-helmet--active .c-helmet__main-wrap {
-  position: fixed;
+.c-knowledge__text-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  border: 550px solid;
+  border-left: 0;
+  border-bottom: 0;
+  border-right-color: #3d3d3d;
+  border-top-color: transparent;
+}
+
+.c-knowledge__text {
+  margin: 80px auto;
+  padding: 0 25px;
+  font-size: 1.25rem;
+}
+
+.c-knowledge__image-wrap {
+  position: relative;
+}
+
+.c-knowledge__image-wrap > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.c-knowledge__image-wrap, .c-knowledge__text-wrap {
+  width: 50%;
+  float: left;
+  height: 100%;
 }
 
 .u-bold {
@@ -619,4 +689,5 @@ template {
 
 .u-bg-normal {
   background-color: #140d1f;
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.67);
 }
